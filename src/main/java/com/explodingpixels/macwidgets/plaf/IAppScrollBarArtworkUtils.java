@@ -17,25 +17,25 @@ public class IAppScrollBarArtworkUtils {
     /* iApp vertical scroll bar image locations. */
 
     private static final String V_SCROLLER_CAP =
-            "/images/scrollbars/isa/v_scroller_top_cap.png";
+            "/images/scrollbars/isaerror/v_scroller_top_cap.png";
 
     private static final String V_TRACK =
-            "/images/scrollbars/isa/v_scroller_track.png";
+            "/images/scrollbars/isaerror/v_scroller_track.png";
 
     private static final String V_SCROLLER_TOGETHER_DECREMENT_BUTTONS =
-            "/images/scrollbars/isa/v_scroller_together_decrement_button.png";
+            "/images/scrollbars/isaerror/v_scroller_together_decrement_button.png";
 
     private static final String V_SCROLLER_TOGETHER_INCREMENT_BUTTONS =
-            "/images/scrollbars/isa/v_scroller_together_increment_button.png";
+            "/images/scrollbars/isaerror/v_scroller_together_increment_button.png";
 
     private static final String V_SCROLLER_SEPARATE_DECREMENT_BUTTONS =
-            "/images/scrollbars/isa/v_scroller_separate_decrement_button.png";
+            "/images/scrollbars/isaerror/v_scroller_separate_decrement_button.png";
 
     private static final String V_SCROLLER_SEPARATE_INCREMENT_BUTTONS =
-            "/images/scrollbars/isa/v_scroller_separate_increment_button.png";
+            "/images/scrollbars/isaerror/v_scroller_separate_increment_button.png";
 
     private static final String V_SCROLLERS =
-            "/images/scrollbars/isa/v_scroller.png";
+            "/images/scrollbars/isaerror/v_scroller.png";
 
     private static final String V_TOP_BUTTON_MASK =
             "/images/scrollbarsa/v_scroller_mask_top.png";
@@ -46,25 +46,25 @@ public class IAppScrollBarArtworkUtils {
     /* iApp horizontal scroll bar image locations. */
 
     private static final String H_SCROLLER_CAP =
-            "/images/scrollbars/isa/h_scroller_left_cap.png";
+            "/images/scrollbars/isaerror/h_scroller_left_cap.png";
 
     private static final String H_TRACK =
-            "/images/scrollbars/isa/h_scroller_track.png";
+            "/images/scrollbars/isaerror/h_scroller_track.png";
 
     private static final String H_SCROLLER_TOGETHER_DECREMENT_BUTTONS =
-            "/images/scrollbars/isa/h_scroller_together_decrement_button.png";
+            "/images/scrollbars/isaerror/h_scroller_together_decrement_button.png";
 
     private static final String H_SCROLLER_TOGETHER_INCREMENT_BUTTONS =
-            "/images/scrollbars/isa/h_scroller_together_increment_button.png";
+            "/images/scrollbars/isaerror/h_scroller_together_increment_button.png";
 
     private static final String H_SCROLLER_SEPARATE_DECREMENT_BUTTONS =
-            "/images/scrollbars/isa/h_scroller_separate_decrement_button.png";
+            "/images/scrollbars/isaerror/h_scroller_separate_decrement_button.png";
 
     private static final String H_SCROLLER_SEPARATE_INCREMENT_BUTTONS =
-            "/images/scrollbars/isa/h_scroller_separate_increment_button.png";
+            "/images/scrollbars/isaerror/h_scroller_separate_increment_button.png";
 
     private static final String H_SCROLLERS =
-            "/images/scrollbars/isa/h_scroller.png";
+            "/images/scrollbars/isaerror/h_scroller.png";
 
     private static final String H_LEFT_BUTTON_MASK =
             "/images/scrollbars/h_scroller_mask_left.png";

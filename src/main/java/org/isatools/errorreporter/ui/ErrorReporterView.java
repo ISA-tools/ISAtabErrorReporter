@@ -77,7 +77,9 @@ public class ErrorReporterView extends JPanel {
         DefaultListModel model = new DefaultListModel();
 
         for (ISAFileErrorReport report : errorReports) {
-            model.addElement(report);
+            if (report.getMessages().size() > 0) {
+                model.addElement(report);
+            }
         }
 
         errorFileList = new JList(model);
