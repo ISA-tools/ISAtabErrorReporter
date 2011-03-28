@@ -1,4 +1,4 @@
-package com.explodingpixels.macwidgets.plaf;
+package com.explodingpixels.macwidgets.plaferror;
 
 import com.explodingpixels.widgets.ImageButton;
 import com.explodingpixels.widgets.ImageUtils;

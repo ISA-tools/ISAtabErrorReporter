@@ -1,4 +1,4 @@
-package com.explodingpixels.macwidgets.plaf;
+package com.explodingpixels.macwidgets.plaferror;
 
 import com.explodingpixels.painter.ImagePainter;
 import com.explodingpixels.painter.Painter;

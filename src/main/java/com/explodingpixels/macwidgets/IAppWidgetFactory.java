@@ -1,7 +1,7 @@
 package com.explodingpixels.macwidgets;
 
 
-import com.explodingpixels.macwidgets.plaf.IAppScrollBarUI;
+import com.explodingpixels.macwidgets.plaferror.IAppScrollBarUI;
 import com.explodingpixels.widgets.ImageBasedJComponent;
 
 import javax.swing.*;
