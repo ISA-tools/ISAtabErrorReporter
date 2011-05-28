@@ -34,13 +34,13 @@ public class ISAFileItemUI extends JPanel {
         image.setOpaque(false);
 
         fileName = new JLabel("", SwingConstants.CENTER);
-        fileName.setForeground(UIHelper.GREY_COLOR);
+        fileName.setForeground(UIHelper.LIGHT_GREY_COLOR);
         fileName.setFont(UIHelper.VER_10_PLAIN);
         fileName.setOpaque(false);
 
 
         problemInfo = new JLabel("", SwingConstants.CENTER);
-        problemInfo.setForeground(UIHelper.RED_COLOR);
+        problemInfo.setForeground(UIHelper.LIGHT_GREEN_COLOR);
         problemInfo.setFont(UIHelper.VER_9_PLAIN);
         problemInfo.setOpaque(false);
 

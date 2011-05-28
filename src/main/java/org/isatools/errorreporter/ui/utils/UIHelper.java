@@ -20,5 +20,7 @@ public class UIHelper {
 
     public static final Color GREY_COLOR = new Color(51, 51, 51);
     public static final Color RED_COLOR = new Color(191, 30, 45);
+    public static final Color LIGHT_GREY_COLOR = new Color(153, 153, 153);
+    public static final Color LIGHT_GREEN_COLOR = new Color(140, 198, 63);
     public static final Color BG_COLOR = Color.WHITE;
 }

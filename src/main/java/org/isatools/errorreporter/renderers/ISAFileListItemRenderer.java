@@ -20,7 +20,7 @@ import org.jdesktop.fuse.*;
 public class ISAFileListItemRenderer extends JComponent
         implements ListCellRenderer {
 
-    private static Color listForeground = new Color(51, 51, 51);
+    private static Color listForeground = UIHelper.GREY_COLOR;
     private static Color listBackground = Color.WHITE;
 
     @InjectedResource

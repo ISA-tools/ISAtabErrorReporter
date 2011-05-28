@@ -155,7 +155,7 @@ public class ErrorReporterView extends JPanel {
 
         centralPanel.add(scroller, BorderLayout.CENTER);
 
-        centralPanel.setBorder(new TitledBorder(new RoundedBorder(UIHelper.RED_COLOR, 3), "",
+        centralPanel.setBorder(new TitledBorder(new RoundedBorder(UIHelper.LIGHT_GREY_COLOR, 3), "",
                 TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, UIHelper.VER_10_BOLD, UIHelper.RED_COLOR));
 
         add(centralPanel, BorderLayout.CENTER);
@@ -167,39 +167,5 @@ public class ErrorReporterView extends JPanel {
         for (String s : messages) {
             messageListModel.addElement(s);
         }
-    }
-
-
-    public static void main(String[] args) {
-        JFrame container = new JFrame();
-
-        container.setUndecorated(true);
-        container.setPreferredSize(new Dimension(400, 400));
-
-        List<ISAFileErrorReport> report = new ArrayList<ISAFileErrorReport>();
-
-        Set<String> messages = new HashSet<String>();
-
-        messages.add("no publication doi field was found in i_investigation.txt");
-        messages.add("no publication title field was found in s_investigation.txt, this is quite a disappointing turn of events!");
-        messages.add("no publication doi field was found in a_investigation.txt, omg now this list item is going to be a bit bigger! Maybe even bigger? I don't know, it's too big perhaps.");
-
-        ISAFileErrorReport report1 = new ISAFileErrorReport("i_investigation.txt", ISAFileType.INVESTIGATION, messages);
-        ISAFileErrorReport report2 = new ISAFileErrorReport("a_microarray.txt", ISAFileType.MICROARRAY, messages);
-        ISAFileErrorReport report3 = new ISAFileErrorReport("a_nmr.txt", ISAFileType.NMR, messages);
-        ISAFileErrorReport report4 = new ISAFileErrorReport("s_sample.txt", ISAFileType.STUDY_SAMPLE, messages);
-
-        report.add(report1);
-        report.add(report2);
-        report.add(report3);
-        report.add(report4);
-
-        ErrorReporterView view = new ErrorReporterView(report);
-        view.createGUI();
-
-        container.add(view);
-        container.pack();
-
-        container.setVisible(true);
     }
 }

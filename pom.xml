@@ -6,7 +6,7 @@
 
     <groupId>org.isatools</groupId>
     <artifactId>ISAtabErrorReporter</artifactId>
-    <version>0.1-beta</version>
+    <version>0.1</version>
     <url>http://www.isa-tools.org</url>
 
     <developers>
@@ -27,8 +27,8 @@
         </repository>
 
         <repository>
-            <id>repo1</id>
-            <url>http://repo1.maven.org/maven2/</url>
+            <id>oerc</id>
+            <url>http://frog.oerc.ox.ac.uk:8080/artifactory/repo/</url>
         </repository>
 
     </repositories>
@@ -53,6 +53,12 @@
             <artifactId>junit</artifactId>
             <version>4.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.explodingpixels</groupId>
+            <artifactId>scroller</artifactId>
+            <version>0.1</version>
         </dependency>
 
     </dependencies>
