@@ -1,23 +1,25 @@
 package org.isatools.errorreporter.model;
 
-import java.util.Set;
+import java.util.List;
 
-/**
- * Created by the ISA team
- *
- * @author Eamonn Maguire (eamonnmag@gmail.com)
- *         <p/>
- *         Date: 18/03/2011
- *         Time: 15:13
- */
 public class ISAFileErrorReport {
 
     private String fileName;
-    private ISAFileType fileType;
-    private Set<String> messages;
 
-    public ISAFileErrorReport(String fileName, ISAFileType fileType, Set<String> messages) {
+    private String technologyType;
+    private String measurementType;
+    private FileType fileType;
+    private List<ErrorMessage> messages;
+
+    public ISAFileErrorReport(String fileName, FileType fileType, List<ErrorMessage> messages) {
+        this(fileName, "", "", fileType, messages);
+    }
+
+    public ISAFileErrorReport(String fileName, String technologyType, String measurementType,
+                              FileType fileType, List<ErrorMessage> messages) {
         this.fileName = fileName;
+        this.technologyType = technologyType;
+        this.measurementType = measurementType;
         this.fileType = fileType;
         this.messages = messages;
     }
@@ -26,16 +28,40 @@ public class ISAFileErrorReport {
         return fileName;
     }
 
-    public ISAFileType getFileType() {
+    public FileType getFileType() {
         return fileType;
     }
 
-    public Set<String> getMessages() {
+    public List<ErrorMessage> getMessages() {
         return messages;
     }
 
+    public int getMessageCountAtLevel(ErrorLevel level) {
+        int count = 0;
+        for (ErrorMessage message : messages) {
+            if (message.getErrorLevel() == level) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public String getAssayDescription() {
+        if (measurementType.equals("")) {
+            return "";
+        } else {
+            StringBuilder assayDescription = new StringBuilder(measurementType);
+            if (!technologyType.equals("")) {
+                assayDescription.append(" using ").append(technologyType);
+            }
+
+            return assayDescription.toString();
+        }
+    }
+
+
     public String getProblemSummary() {
-        if(messages == null || messages.size() == 0) {
+        if (messages == null || messages.size() == 0) {
             return "0 problems found";
         } else {
             return messages.size() + " problem" + (messages.size() == 1 ? "" : "s") + " found";
