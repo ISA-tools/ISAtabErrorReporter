@@ -62,7 +62,9 @@ public class ErrorReporterView extends JPanel {
 
         createList();
         createMessagesPanel();
-        updateMessageListContent(errorReports.get(0));
+        if (errorReports.size() > 0) {
+            updateMessageListContent(errorReports.get(0));
+        }
     }
 
     private void createList() {
