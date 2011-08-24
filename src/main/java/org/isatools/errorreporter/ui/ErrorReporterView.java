@@ -70,7 +70,7 @@ public class ErrorReporterView extends JPanel {
     private void createList() {
 
         assayContainer = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        assayContainer.setBackground(UIHelper.BG_COLOR);
+        assayContainer.setOpaque(false);
 
         errorMessageWriter = new ErrorMessageWriter();
 
@@ -111,7 +111,9 @@ public class ErrorReporterView extends JPanel {
             container.add(iconContainer);
         }
 
-        container.add(UIHelper.createLabel("<html><b>Click on one of the boxes below</b> to view it's errors and warnings.</html>", UIHelper.VER_10_PLAIN, UIHelper.DARK_GREEN_COLOR, SwingConstants.LEFT));
+        container.add(UIHelper.wrapComponentInPanel(
+                UIHelper.createLabel("<html><b>Click on one of the boxes below</b> to view it's errors and warnings.</html>",
+                        UIHelper.VER_10_PLAIN, UIHelper.DARK_GREEN_COLOR, SwingConstants.LEFT)));
         container.add(Box.createVerticalStrut(5));
         container.add(scroller);
         container.add(Box.createVerticalGlue());

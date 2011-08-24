@@ -36,4 +36,13 @@ public class UIHelper {
         newLab.setForeground(c);
         return newLab;
     }
+
+    public static JPanel wrapComponentInPanel(Component c) {
+        JPanel wrapperPanel = new JPanel(new GridLayout(1, 1));
+        wrapperPanel.setOpaque(false);
+        wrapperPanel.add(c);
+
+        return wrapperPanel;
+    }
+
 }
