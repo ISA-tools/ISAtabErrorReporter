@@ -4,6 +4,7 @@ import org.isatools.errorreporter.model.ErrorLevel;
 import org.isatools.errorreporter.model.ErrorMessage;
 import org.isatools.errorreporter.model.ISAFileErrorReport;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ErrorMessageWriter {
@@ -15,7 +16,7 @@ public class ErrorMessageWriter {
     private String baseHTML;
 
 
-    public String createHTMLRepresentationOfErrors(ISAFileErrorReport errors) {
+    public String createHTMLRepresentationOfErrors(List<ErrorMessage> errors) {
 
         // only load the files if they are not already in memory
         if (baseHTML == null || injectedTableHTML == null) {
@@ -23,7 +24,7 @@ public class ErrorMessageWriter {
         }
 
         StringBuilder tables = new StringBuilder();
-        for (ErrorMessage error : errors.getMessages()) {
+        for (ErrorMessage error : errors) {
             String tmpTable = injectedTableHTML;
 
             tmpTable = tmpTable.replaceAll("(TYPE)", error.getErrorLevel().toString());

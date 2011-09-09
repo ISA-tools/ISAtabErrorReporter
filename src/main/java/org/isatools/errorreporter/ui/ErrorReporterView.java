@@ -157,7 +157,7 @@ public class ErrorReporterView extends JPanel {
 
     private void updateMessageListContent(ISAFileErrorReport errorReport) {
         fileInfoText.setText("Errors and warnings found in " + errorReport.getFileName());
-        String html = errorMessageWriter.createHTMLRepresentationOfErrors(errorReport);
+        String html = errorMessageWriter.createHTMLRepresentationOfErrors(errorReport.getMessages());
         messagePane.setText(html);
     }
 
