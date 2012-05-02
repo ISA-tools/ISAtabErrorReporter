@@ -4,22 +4,18 @@ import com.explodingpixels.macwidgets.IAppWidgetFactory;
 import org.isatools.errorreporter.html.ErrorMessageWriter;
 import org.isatools.errorreporter.model.ErrorLevel;
 import org.isatools.errorreporter.model.ErrorMessage;
-import org.isatools.errorreporter.model.ISAFileErrorReport;
 import org.isatools.errorreporter.model.FileType;
-import org.isatools.errorreporter.ui.borders.RoundedBorder;
+import org.isatools.errorreporter.model.ISAFileErrorReport;
 import org.isatools.errorreporter.ui.utils.UIHelper;
+import org.jdesktop.fuse.InjectedResource;
+import org.jdesktop.fuse.ResourceInjector;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
-
-import org.jdesktop.fuse.*;
-import org.jdesktop.fuse.ResourceInjector;
-
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ErrorReporterView extends JPanel {
@@ -74,7 +70,10 @@ public class ErrorReporterView extends JPanel {
 
         errorMessageWriter = new ErrorMessageWriter();
 
+        errorReports.add(0, createSummaryReport());
+
         for (ISAFileErrorReport errorReport : errorReports) {
+
             ErrorInformationPanel errorInformationPanel = new ErrorInformationPanel(errorReport);
 
             errorInformationPanel.addPropertyChangeListener("errorSelected", new PropertyChangeListener() {
@@ -159,6 +158,18 @@ public class ErrorReporterView extends JPanel {
         fileInfoText.setText("Errors and warnings found in " + errorReport.getFileName());
         String html = errorMessageWriter.createHTMLRepresentationOfErrors(errorReport.getMessages());
         messagePane.setText(html);
+    }
+
+    private ISAFileErrorReport createSummaryReport() {
+
+        List<ErrorMessage> errorMessages = new ArrayList<ErrorMessage>();
+        for (ISAFileErrorReport errorReport : errorReports) {
+            for (ErrorMessage message : errorReport.getMessages()) {
+                errorMessages.add(new ErrorMessage(message.getErrorLevel(), message.getMessage(), errorReport.getFileName()));
+            }
+        }
+
+        return new ISAFileErrorReport("Summary", FileType.INVESTIGATION, errorMessages);
     }
 
 

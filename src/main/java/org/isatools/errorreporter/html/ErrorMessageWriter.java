@@ -29,6 +29,7 @@ public class ErrorMessageWriter {
 
             tmpTable = tmpTable.replaceAll("(TYPE)", error.getErrorLevel().toString());
             tmpTable = tmpTable.replaceAll("(ERROR_CLASS)", error.getErrorLevel() == ErrorLevel.ERROR ? "error-tag" : "warning-tag");
+            tmpTable = tmpTable.replaceAll("FILE", " - " + error.getFile());
             tmpTable = tmpTable.replaceAll("MESSAGE", error.getMessage());
 
             tables.append(tmpTable);
