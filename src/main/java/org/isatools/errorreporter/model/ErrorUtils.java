@@ -16,16 +16,13 @@ public class ErrorUtils {
 
         String ndc = loggingEvent.getNDC();
 
-        if (ndc != null) {
+        if (ndc != null && ndc.lastIndexOf("file:")!=-1) {
             System.out.println(ndc);
-
             ndc = ndc.substring(ndc.lastIndexOf("file:")).replaceAll("file:|]|\\[sect:ASSAYS", "").trim();
-
-
             return ndc;
         }
-
         return null;
 
     }
+
 }
