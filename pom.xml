@@ -6,7 +6,7 @@
 
     <groupId>org.isatools</groupId>
     <artifactId>ISAtabErrorReporter</artifactId>
-    <version>0.4</version>
+    <version>0.5</version>
     <url>http://www.isa-tools.org</url>
 
     <developers>
