@@ -18,6 +18,7 @@ public class ErrorInformationPanel extends JPanel {
 
     private Color hoverColor = new Color(249, 249, 249);
     private Color warningColor = new Color(255, 221, 0);
+    private Color infoColor = new Color(153, 204, 255);
 
     @InjectedResource
     private ImageIcon microarray, massNMR, sequencing,
@@ -77,6 +78,7 @@ public class ErrorInformationPanel extends JPanel {
 
         int errorCount = errorReport.getMessageCountAtLevel(ErrorLevel.ERROR);
         int warningCount = errorReport.getMessageCountAtLevel(ErrorLevel.WARNING);
+        int infoCount = errorReport.getMessageCountAtLevel(ErrorLevel.INFO);
 
         final JLabel errorInformation = UIHelper.createLabel(" " + errorCount + " errors ", UIHelper.VER_8_BOLD, UIHelper.BG_COLOR, SwingConstants.CENTER);
 
@@ -96,11 +98,23 @@ public class ErrorInformationPanel extends JPanel {
 
         warningInformationContainer.setAlignmentY(10.0f);
 
-        if (warningCount > 0 && errorCount > 0) {
+        final JLabel infoInformation = UIHelper.createLabel(" " + infoCount + " info ", UIHelper.VER_8_BOLD, UIHelper.GREY_COLOR, SwingConstants.CENTER);
+
+        Box infoInformationContainer = Box.createHorizontalBox();
+        infoInformationContainer.add(infoInformation);
+
+        infoInformationContainer.setBorder(new RoundedBorder(infoColor, infoColor, 4));
+
+        infoInformationContainer.setAlignmentY(10.0f);
+
+        if (warningCount > 0 && errorCount > 0 && infoCount >0 ) {
+            topSection.add(Box.createHorizontalStrut(0));
+        } else if ((warningCount >0 && errorCount > 0) || (warningCount>0 && infoCount >0 ) || (infoCount >0 && errorCount >0 )){
             topSection.add(Box.createHorizontalStrut(20));
         } else {
             topSection.add(Box.createHorizontalStrut(65));
         }
+
 
         if (errorCount > 0) {
             topSection.add(errorInformationContainer);
@@ -109,6 +123,11 @@ public class ErrorInformationPanel extends JPanel {
 
         if (warningCount > 0) {
             topSection.add(warningInformationContainer);
+            topSection.add(Box.createHorizontalStrut(5));
+        }
+
+        if (infoCount > 0) {
+            topSection.add(infoInformationContainer);
         }
 
         return topSection;

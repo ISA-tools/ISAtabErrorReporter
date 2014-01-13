@@ -111,7 +111,7 @@ public class ErrorReporterView extends JPanel {
         }
 
         container.add(UIHelper.wrapComponentInPanel(
-                UIHelper.createLabel("<html><b>Click on one of the boxes below</b> to view it's errors and warnings.</html>",
+                UIHelper.createLabel("<html><b>Click on one of the boxes below</b> to view it's errors, warnings and information.</html>",
                         UIHelper.VER_10_PLAIN, UIHelper.DARK_GREEN_COLOR, SwingConstants.LEFT)));
         container.add(Box.createVerticalStrut(5));
         container.add(scroller);
@@ -155,7 +155,7 @@ public class ErrorReporterView extends JPanel {
     }
 
     private void updateMessageListContent(ISAFileErrorReport errorReport) {
-        fileInfoText.setText("Errors and warnings found in " + errorReport.getFileName());
+        fileInfoText.setText("Errors, warnings and information found in " + errorReport.getFileName());
         String html = errorMessageWriter.createHTMLRepresentationOfErrors(errorReport.getMessages());
         messagePane.setText(html);
     }

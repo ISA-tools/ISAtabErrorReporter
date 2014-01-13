@@ -2,7 +2,6 @@ package org.isatools.errorreporter.html;
 
 import org.isatools.errorreporter.model.ErrorLevel;
 import org.isatools.errorreporter.model.ErrorMessage;
-import org.isatools.errorreporter.model.ISAFileErrorReport;
 
 import java.util.List;
 import java.util.Scanner;
@@ -28,7 +27,18 @@ public class ErrorMessageWriter {
             String tmpTable = injectedTableHTML;
 
             tmpTable = tmpTable.replaceAll("(TYPE)", error.getErrorLevel().toString());
-            tmpTable = tmpTable.replaceAll("(ERROR_CLASS)", error.getErrorLevel() == ErrorLevel.ERROR ? "error-tag" : "warning-tag");
+
+            ErrorLevel level = error.getErrorLevel();
+            String tag = null;
+
+            if (level == ErrorLevel.ERROR)
+                tag = "error-tag";
+            else if (level == ErrorLevel.WARNING)
+                tag = "warning-tag";
+            else
+                tag = "info-tag";
+
+            tmpTable = tmpTable.replaceAll("(ERROR_CLASS)", tag);
             tmpTable = tmpTable.replaceAll("FILE", " - " + error.getFile());
             tmpTable = tmpTable.replaceAll("MESSAGE", error.getMessage());
 
