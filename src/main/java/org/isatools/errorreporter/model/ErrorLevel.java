@@ -9,7 +9,7 @@ package org.isatools.errorreporter.model;
  *         Time: 10:40
  */
 public enum ErrorLevel {
-    WARNING("warning"), ERROR("error");
+    WARNING("warning"), ERROR("error"), INFO("info");
     private String type;
 
     ErrorLevel(String type) {
